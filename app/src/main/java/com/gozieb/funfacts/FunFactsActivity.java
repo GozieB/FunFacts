@@ -15,6 +15,7 @@ import java.util.Random;
 
 public class FunFactsActivity extends ActionBarActivity {
     private FactBook mFactBook = new FactBook();
+    private ColorWheel mColorWheel = new ColorWheel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,8 @@ public class FunFactsActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                String fact = mFactBook.getFact();
-                relativeLayout.setBackgroundColor(Color.RED);
+                int color = mColorWheel.getColor();
+                relativeLayout.setBackgroundColor(color);
 
                // Update the label with a dynamic fact...
                 factLabel.setText(fact);
